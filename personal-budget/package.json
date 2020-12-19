@@ -1,13 +1,17 @@
 {
   "name": "personal-budget",
   "version": "0.0.0",
+  "main": "server.js",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
     "build": "ng build",
-    "test": "ng test",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "ng lint",
     "e2e": "ng e2e"
+  },
+  "engines": {
+    "node": "12.18.2"
   },
   "private": true,
   "dependencies": {
