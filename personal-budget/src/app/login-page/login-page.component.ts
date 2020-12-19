@@ -17,7 +17,7 @@ export class LoginPageComponent implements OnInit {
   isUserLoggedIn = new Subject<boolean>();
 
   constructor(private router: Router,public _dataService: DataService,public toastr:ToastrService) {
-    this.isUserLoggedIn.next(false);      
+    this.isUserLoggedIn.next(false);
    }
 
   ngOnInit(): void {
@@ -29,22 +29,22 @@ export class LoginPageComponent implements OnInit {
 
 
   enterAllDetails(){
-    this.toastr.error('Please enter all the details','Warning',{positionClass: 'md-toast-top-left'});
+    window.alert('Please enter all the details');
     console.log("in");
   }
   loginSuccessful(){
-    this.toastr.success('Logged In','Success');
+    window.alert('Logged In');
   }
 
   loginFailure(){
-    this.toastr.error('Invalid Credentials. Please enter valid credentials','Failure');
+    window.alert('Invalid Credentials. Please enter valid credentials');
   }
   loginFunction(){
     let record = {};
     record['username'] = this.username;
     record['password'] = this.password;
     console.log(JSON.stringify(record));
-    
+
     if(!this.username || !this.password){
       this.enterAllDetails();
       console.log("UserName or password is missing");

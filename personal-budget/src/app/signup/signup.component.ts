@@ -33,11 +33,11 @@ export class SignupComponent implements OnInit {
 
 
   duplicateUserName(){
-    this.toastr.warning('User with this name already exixts. Please proceed to login page!!');
+    window.alert('User with this name already exists. Please proceed to login page!!');
   }
 
   incompleteDetails(){
-    this.toastr.error('Please enter all the fields','Warning');
+    window.alert('Please enter all the fields');
   }
 
 
@@ -51,7 +51,7 @@ export class SignupComponent implements OnInit {
     for(let i=0;i<this.userData.length;i++){
       if(this.userData[i].username == this.username){
         console.log("There exists a user with same username");
-        this.toastr.warning('User with this name already exixts. Please proceed to login page!!');
+        window.alert('User with this name already exists. Please proceed to login page!!');
         return;
       }
     }
@@ -66,7 +66,7 @@ export class SignupComponent implements OnInit {
     record['repassword'] = this.repassword;
     console.log(JSON.stringify(record));
       if(!this.username || !this.password || !this.email || !this.repassword){
-        this.toastr.error('Please enter all the fields','Warning');
+        window.alert('Please enter all the fields');
         this.incompleteDetails();
         return;
       }else{
